@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LoadSet ServerPrefixes="http://*:8077/" Password="admin">
+  <RemoteServers>
+    <Server IsEnabled="True" Name="Self">http://localhost:8077</Server>
+  </RemoteServers>
+  <Batches>
+    <Batch>5</Batch>
+    <Batch>10</Batch>
+    <Batch>25</Batch>
+    <Batch>50</Batch>
+    <Batch>75</Batch>
+    <Batch>100</Batch>
+    <Batch>150</Batch>
+    <Batch>200</Batch>
+  </Batches>
+  <Tasks>
+    <Task Name="GoogleSearch" IsEnabled="True" LoadSize="20" UseBatchSet="False" IsDistributed="True">
+      <Auth>
+      </Auth>
+      <Request IsEnabled="False" Url="http://www.google.com/search?q=parallelism" ContentEncoding="UTF-8" ContentType="None" AcceptType="None" IsPost="False" IsBodyTransport="False">
+      </Request>
+      <Request IsEnabled="True" Url="http://www.google.com/search" ContentEncoding="UTF-8" ContentType="None" AcceptType="None" IsPost="False" IsBodyTransport="False">
+        <Parameter Key="q">parallelism</Parameter>
+      </Request>
+      <Batches>
+        <Batch>5</Batch>
+        <Batch>10</Batch>
+      </Batches>
+    </Task>
+  </Tasks>
+</LoadSet>
